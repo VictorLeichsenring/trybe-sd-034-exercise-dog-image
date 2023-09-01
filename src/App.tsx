@@ -13,7 +13,13 @@ function App() {
   };
 
   useEffect(() => {
-    fetchDog();
+    const localStorageUrl = localStorage.getItem('imageUrl');
+    if (localStorageUrl) {
+      setImageUrl(localStorageUrl);
+      setIsLoading(false);
+    } else {
+      fetchDog();
+    }
   }, []);
 
   useEffect(() => {
