@@ -39,7 +39,7 @@ function App() {
   }
   return (
     <div>
-      <h1>Gerador de Dog</h1>
+      <h1>Gerador de Doguinhos</h1>
       <h2>O seu doguinho é:</h2>
       <img src={ imageUrl } alt="Doguinho aleatório" />
       <button onClick={ fetchDog }>Novo doguinho!</button>
