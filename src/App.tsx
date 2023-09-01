@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
-
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [imageUrl, setImageUrl] = useState('');
@@ -16,6 +15,14 @@ function App() {
   useEffect(() => {
     fetchDog();
   }, []);
+
+  useEffect(() => {
+    if (!isLoading) {
+      localStorage.setItem('imageUrl', imageUrl);
+      const dogBreed = imageUrl.split('/')[4];
+      alert(dogBreed);
+    }
+  }, [imageUrl, isLoading]);
 
   if (isLoading) {
     return (
